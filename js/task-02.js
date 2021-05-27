@@ -2,11 +2,12 @@ const ingredients = ["Картошка", "Грибы", "Чеснок", "Поми
 const container = document.querySelector("ul");
 
 function setIngredientsList() {
-    ingredients.forEach((ingredient) => {
-        const item = document.createElement("li");
-        item.textContent = ingredient;
-        container.append(item);
-    })
+ const listArray = ingredients.map((ingredient) => {
+   const item = document.createElement("li");
+   item.textContent = ingredient;
+   return item;
+ });
+    container.append(...listArray);
 }
 setIngredientsList();
 

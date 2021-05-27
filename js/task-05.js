@@ -5,7 +5,7 @@ inputField.addEventListener("input", setNameValue);
 
 function setNameValue() {
     output.textContent = inputField.value;
-    if (output.textContent === "" || output.textContent === null) {
+    if (output.textContent === "") {
       output.textContent = "незнакомец";
     }
 }

@@ -8,7 +8,8 @@ function validateInput() {
     if (input.value.length === validInputLength) {
     input.classList.remove("invalid");
     input.classList.add("valid");
-  } else {
+    } else {
+    input.classList.remove("valid");
     input.classList.add("invalid");
   }
 }

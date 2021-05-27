@@ -16,12 +16,14 @@ const images = [
 const gallery = document.getElementById("gallery");
 
 function createGallery() {
-  let galleryItem = '';
-  images.forEach((item) => {
-    galleryItem = `<li><img src="${item.url}" alt="${item.alt}" class="gallery-item">`
-    gallery.insertAdjacentHTML("beforeend", galleryItem);
-    gallery.classList.add("gallery");
-  })
+  const createImageList = (array) =>
+    array
+      .map(({ url, alt }) => {
+        return `<li><img src = '${url}' alt = '${alt}' class='gallery-item'></li>`;
+      })
+      .join("");
+  gallery.insertAdjacentHTML("beforeend", createImageList(images));
+  gallery.classList.add("gallery");
 }
 
-createGallery();
+createGallery(images);
